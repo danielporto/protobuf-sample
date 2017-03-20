@@ -1,0 +1,3 @@
+1. clone the project
+2. intellij > open > .../build.gradle > open as project (intellij will import gradle modules)
+3. execute 'compileJava' or 'generateProto' task and files will be generated and source code will compile...
