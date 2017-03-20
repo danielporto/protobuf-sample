@@ -1,0 +1,39 @@
+syntax = "proto2";
+
+option java_multiple_files = true;
+option java_outer_classname = "ProtoCommon";
+
+
+package com.vach.common.proto;
+
+message Currency {
+  required string symbol = 1;
+}
+
+message Pair {
+  required Currency base = 1;
+  required Currency quote = 2;
+}
+
+message Order {
+  enum Side {
+    BID = 0;
+    ASK = 1;
+  }
+
+  required int64 time = 1;
+  required double price = 2;
+  required double volume = 3;
+  required Side side = 4;
+}
+
+message Orderbook {
+  repeated Order bids = 1;
+  repeated Order asks = 2;
+}
+
+message Trade {
+  required int64 time = 1;
+  required double price = 2;
+  required double volume = 3;
+}
